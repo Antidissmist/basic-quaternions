@@ -5,7 +5,11 @@
 
 function QuatFromAxisAngle(_axisX, _axisY, _axisZ, _angle)
 {
-    var _inverseLength = 1 / sqrt(_axisX*_axisX + _axisY*_axisY + _axisZ*_axisZ);
+    var _length = point_distance_3d(0,0,0,_axisX,_axisY,_axisZ);
+    if _length==0 {
+        return QuatNew(); //no rotation
+    }
+    var _inverseLength = 1 / _length;
     _axisX *= _inverseLength;
     _axisY *= _inverseLength;
     _axisZ *= _inverseLength;

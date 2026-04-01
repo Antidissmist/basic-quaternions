@@ -1,3 +1,7 @@
+///@desc Creates a matrix representing the same rotation as the quaternion
+///@param quaternion
+///@returns matrix
+
 function QuatGetRotationMatrix(_quat)
 {
     var _x = _quat[0];
